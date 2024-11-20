@@ -59,4 +59,10 @@ public class InstructorController {
         }
         return null;
     }
+
+    @PutMapping("/AffecterInstrucTorCourse/{numcourse}")
+    @Operation(description = "Affecter Instructor au Course")
+    public Instructor affecterInstructorToCourse(@PathVariable Long numcourse,@RequestBody Instructor ins){
+        return is.addInstructorToCourse(ins,numcourse);
+    }
 }
